@@ -27,7 +27,7 @@ public class OrderService {
         payment.setAmount(order.getPrice());
 
         // Rest api call for payment service
-        Payment paymentResponse = restTemplate.postForObject("http://localhost:9092/payment/doPayment", payment, Payment.class);
+        Payment paymentResponse = restTemplate.postForObject("http://payment-service/payment/doPayment", payment, Payment.class);
 
         String resMsg = paymentResponse.getPaymentStatus().equalsIgnoreCase("SUCESS")?"Payment done and order placed ":
                 "Payment failed, order cancelled";
