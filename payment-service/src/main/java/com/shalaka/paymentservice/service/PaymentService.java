@@ -24,4 +24,8 @@ public class PaymentService {
         // API call from 3rd party payment gate way like paypal, paytm
         return new Random().nextBoolean()?"SUCESS":"FAILURE";
     }
+
+    public Payment findPaymentHistoryByOrderID(int orderID) {
+        return  paymentRepository.findByOrderId(orderID);
+    }
 }
