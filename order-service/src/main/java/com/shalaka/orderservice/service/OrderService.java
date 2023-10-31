@@ -6,6 +6,7 @@ import com.shalaka.orderservice.common.TransactionResponse;
 import com.shalaka.orderservice.entity.Order;
 import com.shalaka.orderservice.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -20,6 +21,9 @@ public class OrderService {
     @Autowired
     private RestTemplate restTemplate;
 
+    @Value("${microservice.payment-service.endpoints.endpoint.uri}")
+    private String ENDPOINT_URL;
+
     public TransactionResponse saveOrder(TransactionRequest transactionRequest){
         Order order = transactionRequest.getOrder();
         Payment payment = transactionRequest.getPayment();
@@ -27,7 +31,7 @@ public class OrderService {
         payment.setAmount(order.getPrice());
 
         // Rest api call for payment service
-        Payment paymentResponse = restTemplate.postForObject("http://payment-service/payment/doPayment", payment, Payment.class);
+        Payment paymentResponse = restTemplate.postForObject(ENDPOINT_URL, payment, Payment.class);
 
         String resMsg = paymentResponse.getPaymentStatus().equalsIgnoreCase("SUCESS")?"Payment done and order placed ":
                 "Payment failed, order cancelled";
