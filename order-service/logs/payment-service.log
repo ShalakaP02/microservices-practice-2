@@ -1,0 +1,96 @@
+2023-11-02 10:44:35.313  INFO 5060 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 10:44:39.196  WARN 5060 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1d10h29m51s617ms753µs999ns).
+2023-11-02 10:44:45.938  WARN 5060 --- [DiscoveryClient-0] c.netflix.discovery.TimedSupervisorTask  : task supervisor timed out
+
+java.util.concurrent.TimeoutException: null
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204) ~[na:na]
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:68) ~[eureka-client-1.10.17.jar:1.10.17]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1589) ~[na:na]
+
+2023-11-02 10:49:36.400  INFO 5060 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 10:54:36.431  INFO 5060 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 10:59:36.444  INFO 5060 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 11:04:36.467  INFO 5060 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 11:09:36.480  INFO 5060 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 11:14:36.531  INFO 5060 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 11:19:36.557  INFO 5060 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 11:24:36.707  INFO 5060 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 11:29:36.715  INFO 5060 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 11:43:57.609  INFO 12636 --- [main] c.s.p.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 19.0.1 on DESKTOP-8PB2298 with PID 12636 (D:\WorkShalaka\2023-prep\Microservices-v2\payment-service\target\classes started by dipen in D:\WorkShalaka\2023-prep\Microservices-v2\order-service)
+2023-11-02 11:43:57.656  INFO 12636 --- [main] c.s.p.PaymentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-11-02 11:43:57.765  INFO 12636 --- [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:9196
+2023-11-02 11:43:57.766  INFO 12636 --- [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=payment-service, profiles=[default], label=null, version=1dc93fbb7b9bfb05da4d42dbd8b5aa3fe67e337f, state=null
+2023-11-02 11:43:58.994  INFO 12636 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-02 11:43:59.410  INFO 12636 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 382 ms. Found 1 JPA repository interfaces.
+2023-11-02 11:44:00.227  INFO 12636 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f6f88d1d-1e2e-3a13-8622-d7f74f8f6ad6
+2023-11-02 11:44:01.727  INFO 12636 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9092 (http)
+2023-11-02 11:44:01.750  INFO 12636 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-02 11:44:01.751  INFO 12636 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+2023-11-02 11:44:02.106  INFO 12636 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-02 11:44:02.106  INFO 12636 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4332 ms
+2023-11-02 11:44:02.154  INFO 12636 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-02 11:44:02.481  INFO 12636 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-02 11:44:02.493  INFO 12636 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:payment'
+2023-11-02 11:44:02.793  INFO 12636 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-02 11:44:02.860  INFO 12636 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-11-02 11:44:03.072  INFO 12636 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-11-02 11:44:03.243  INFO 12636 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-11-02 11:44:03.884 DEBUG 12636 --- [main] org.hibernate.SQL                        : create table payment_tbl (payment_id integer not null, amount double not null, order_id integer not null, payment_status varchar(255), transaction_id varchar(255), primary key (payment_id))
+2023-11-02 11:44:03.893 DEBUG 12636 --- [main] org.hibernate.SQL                        : create sequence hibernate_sequence start with 1 increment by 1
+2023-11-02 11:44:03.895  INFO 12636 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-02 11:44:03.908  INFO 12636 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-02 11:44:04.414  WARN 12636 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-02 11:44:05.104  INFO 12636 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-11-02 11:44:05.525  WARN 12636 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-11-02 11:44:05.556  INFO 12636 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-11-02 11:44:05.728  INFO 12636 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-11-02 11:44:05.739  INFO 12636 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 11:44:05.798  INFO 12636 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-11-02 11:44:05.798  INFO 12636 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-11-02 11:44:05.798  INFO 12636 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-11-02 11:44:05.798  INFO 12636 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-11-02 11:44:05.799  INFO 12636 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-11-02 11:44:05.799  INFO 12636 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-11-02 11:44:05.799  INFO 12636 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-11-02 11:44:06.124  INFO 12636 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-11-02 11:44:06.129  INFO 12636 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-11-02 11:44:06.133  INFO 12636 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-11-02 11:44:06.138  INFO 12636 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1698905646138 with initial instances count: 2
+2023-11-02 11:44:06.140  INFO 12636 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application PAYMENT-SERVICE with eureka with status UP
+2023-11-02 11:44:06.141  INFO 12636 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1698905646141, current=UP, previous=STARTING]
+2023-11-02 11:44:06.143  INFO 12636 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYMENT-SERVICE/DESKTOP-8PB2298:payment-service:9092: registering service...
+2023-11-02 11:44:06.172  INFO 12636 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9092 (http) with context path ''
+2023-11-02 11:44:06.173  INFO 12636 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 9092
+2023-11-02 11:44:06.192  INFO 12636 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYMENT-SERVICE/DESKTOP-8PB2298:payment-service:9092 - registration status: 204
+2023-11-02 11:44:06.394  INFO 12636 --- [main] c.s.p.PaymentServiceApplication          : Started PaymentServiceApplication in 12.259 seconds (JVM running for 13.637)
+2023-11-02 11:49:06.230  INFO 12636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 11:50:38.247  INFO 12636 --- [http-nio-9092-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-02 11:50:38.248  INFO 12636 --- [http-nio-9092-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-11-02 11:50:39.164  INFO 12636 --- [http-nio-9092-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 916 ms
+2023-11-02 11:50:41.651  INFO 12636 --- [http-nio-9092-exec-2] c.s.p.controller.PaymentController       : PaymentController doPayment request {"paymentId":0,"paymentStatus":null,"transactionId":null,"orderId":201,"amount":7902.0} 
+2023-11-02 11:50:41.651  INFO 12636 --- [http-nio-9092-exec-1] c.s.p.controller.PaymentController       : PaymentController doPayment request {"paymentId":0,"paymentStatus":null,"transactionId":null,"orderId":201,"amount":7902.0} 
+2023-11-02 11:50:42.901 DEBUG 12636 --- [http-nio-9092-exec-2] org.hibernate.SQL                        : call next value for hibernate_sequence
+2023-11-02 11:50:42.901 DEBUG 12636 --- [http-nio-9092-exec-1] org.hibernate.SQL                        : call next value for hibernate_sequence
+2023-11-02 11:50:44.156 DEBUG 12636 --- [http-nio-9092-exec-1] org.hibernate.SQL                        : insert into payment_tbl (amount, order_id, payment_status, transaction_id, payment_id) values (?, ?, ?, ?, ?)
+2023-11-02 11:50:44.156 DEBUG 12636 --- [http-nio-9092-exec-2] org.hibernate.SQL                        : insert into payment_tbl (amount, order_id, payment_status, transaction_id, payment_id) values (?, ?, ?, ?, ?)
+2023-11-02 11:50:44.179  INFO 12636 --- [http-nio-9092-exec-1] c.s.p.controller.PaymentController       : PaymentController doPayment response {"paymentId":2,"paymentStatus":"SUCESS","transactionId":"7bad57d0-5366-4aa3-a586-6308fbc1c92c","orderId":201,"amount":7902.0} 
+2023-11-02 11:50:44.179  INFO 12636 --- [http-nio-9092-exec-2] c.s.p.controller.PaymentController       : PaymentController doPayment response {"paymentId":1,"paymentStatus":"SUCESS","transactionId":"398dd5ee-c873-4f87-a9cf-a68bec35090c","orderId":201,"amount":7902.0} 
+2023-11-02 11:52:13.893  INFO 12636 --- [http-nio-9092-exec-5] c.s.p.controller.PaymentController       : PaymentController doPayment request {"paymentId":0,"paymentStatus":null,"transactionId":null,"orderId":343,"amount":7902.0} 
+2023-11-02 11:52:13.894 DEBUG 12636 --- [http-nio-9092-exec-5] org.hibernate.SQL                        : call next value for hibernate_sequence
+2023-11-02 11:52:13.897 DEBUG 12636 --- [http-nio-9092-exec-5] org.hibernate.SQL                        : insert into payment_tbl (amount, order_id, payment_status, transaction_id, payment_id) values (?, ?, ?, ?, ?)
+2023-11-02 11:52:13.899  INFO 12636 --- [http-nio-9092-exec-5] c.s.p.controller.PaymentController       : PaymentController doPayment response {"paymentId":3,"paymentStatus":"FAILURE","transactionId":"de305b67-1431-4c7e-9a2b-03082499e768","orderId":343,"amount":7902.0} 
+2023-11-02 11:52:16.941  INFO 12636 --- [http-nio-9092-exec-6] c.s.p.controller.PaymentController       : PaymentController doPayment request {"paymentId":0,"paymentStatus":null,"transactionId":null,"orderId":343,"amount":7902.0} 
+2023-11-02 11:52:16.942 DEBUG 12636 --- [http-nio-9092-exec-6] org.hibernate.SQL                        : call next value for hibernate_sequence
+2023-11-02 11:52:16.943 DEBUG 12636 --- [http-nio-9092-exec-6] org.hibernate.SQL                        : insert into payment_tbl (amount, order_id, payment_status, transaction_id, payment_id) values (?, ?, ?, ?, ?)
+2023-11-02 11:52:16.945  INFO 12636 --- [http-nio-9092-exec-6] c.s.p.controller.PaymentController       : PaymentController doPayment response {"paymentId":4,"paymentStatus":"SUCESS","transactionId":"6db3f2c9-5dcb-4804-8ea1-e7890057e426","orderId":343,"amount":7902.0} 
+2023-11-02 11:52:22.091  INFO 12636 --- [http-nio-9092-exec-7] c.s.p.controller.PaymentController       : PaymentController findPaymentHistoryByOrderID request 113 
+2023-11-02 11:52:23.608 DEBUG 12636 --- [http-nio-9092-exec-7] org.hibernate.SQL                        : select payment0_.payment_id as payment_1_0_, payment0_.amount as amount2_0_, payment0_.order_id as order_id3_0_, payment0_.payment_status as payment_4_0_, payment0_.transaction_id as transact5_0_ from payment_tbl payment0_ where payment0_.order_id=?
+2023-11-02 11:52:23.714  INFO 12636 --- [http-nio-9092-exec-7] c.s.p.controller.PaymentController       : PaymentController findPaymentHistoryByOrderID response null 
+2023-11-02 11:52:27.214  INFO 12636 --- [http-nio-9092-exec-8] c.s.p.controller.PaymentController       : PaymentController findPaymentHistoryByOrderID request 113 
+2023-11-02 11:52:27.215 DEBUG 12636 --- [http-nio-9092-exec-8] org.hibernate.SQL                        : select payment0_.payment_id as payment_1_0_, payment0_.amount as amount2_0_, payment0_.order_id as order_id3_0_, payment0_.payment_status as payment_4_0_, payment0_.transaction_id as transact5_0_ from payment_tbl payment0_ where payment0_.order_id=?
+2023-11-02 11:52:27.216  INFO 12636 --- [http-nio-9092-exec-8] c.s.p.controller.PaymentController       : PaymentController findPaymentHistoryByOrderID response null 
