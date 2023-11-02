@@ -623,3 +623,8 @@ insert into order_tbl (order_name, price, quantity, order_id) values (?, ?, ?, ?
 2023-11-02 13:09:33.612 DEBUG 15504 --- [http-nio-9091-exec-6] org.hibernate.SQL                        : select order0_.order_id as order_id1_0_0_, order0_.order_name as order_na2_0_0_, order0_.price as price3_0_0_, order0_.quantity as quantity4_0_0_ from order_tbl order0_ where order0_.order_id=?
 2023-11-02 13:09:33.627 DEBUG 15504 --- [http-nio-9091-exec-6] org.hibernate.SQL                        : insert into order_tbl (order_name, price, quantity, order_id) values (?, ?, ?, ?)
 2023-11-02 13:09:33.631  INFO 15504 --- [http-nio-9091-exec-6] c.s.o.controller.OrderController         : OrderController bookOrder response {"order":{"orderId":999,"orderName":"teabag","quantity":2,"price":3333.0},"transactionId":"dbef339e-b182-40ad-ab3c-7f102e12f7da","amount":3333.0,"message":"Payment done and order placed "} 
+2023-11-02 13:14:05.184  INFO 15504 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 13:19:05.198  INFO 15504 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 13:24:05.202  INFO 15504 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 13:29:05.218  INFO 15504 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 13:34:05.224  INFO 15504 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

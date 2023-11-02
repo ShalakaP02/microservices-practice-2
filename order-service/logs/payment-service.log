@@ -94,3 +94,130 @@ java.util.concurrent.TimeoutException: null
 2023-11-02 11:52:27.214  INFO 12636 --- [http-nio-9092-exec-8] c.s.p.controller.PaymentController       : PaymentController findPaymentHistoryByOrderID request 113 
 2023-11-02 11:52:27.215 DEBUG 12636 --- [http-nio-9092-exec-8] org.hibernate.SQL                        : select payment0_.payment_id as payment_1_0_, payment0_.amount as amount2_0_, payment0_.order_id as order_id3_0_, payment0_.payment_status as payment_4_0_, payment0_.transaction_id as transact5_0_ from payment_tbl payment0_ where payment0_.order_id=?
 2023-11-02 11:52:27.216  INFO 12636 --- [http-nio-9092-exec-8] c.s.p.controller.PaymentController       : PaymentController findPaymentHistoryByOrderID response null 
+2023-11-02 11:53:02.055  INFO 12636 --- [http-nio-9092-exec-9] c.s.p.controller.PaymentController       : PaymentController findPaymentHistoryByOrderID request 343 
+2023-11-02 11:53:02.056 DEBUG 12636 --- [http-nio-9092-exec-9] org.hibernate.SQL                        : select payment0_.payment_id as payment_1_0_, payment0_.amount as amount2_0_, payment0_.order_id as order_id3_0_, payment0_.payment_status as payment_4_0_, payment0_.transaction_id as transact5_0_ from payment_tbl payment0_ where payment0_.order_id=?
+2023-11-02 11:53:02.760 ERROR 12636 --- [http-nio-9092-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.IncorrectResultSizeDataAccessException: query did not return a unique result: 2; nested exception is javax.persistence.NonUniqueResultException: query did not return a unique result: 2] with root cause
+
+javax.persistence.NonUniqueResultException: query did not return a unique result: 2
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:128) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.query.internal.AbstractProducedQuery.getSingleResult(AbstractProducedQuery.java:1672) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.query.criteria.internal.compile.CriteriaQueryTypeQueryAdapter.getSingleResult(CriteriaQueryTypeQueryAdapter.java:111) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$SingleEntityExecution.doExecute(JpaQueryExecution.java:198) ~[spring-data-jpa-2.7.17.jar:2.7.17]
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:90) ~[spring-data-jpa-2.7.17.jar:2.7.17]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:156) ~[spring-data-jpa-2.7.17.jar:2.7.17]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:144) ~[spring-data-jpa-2.7.17.jar:2.7.17]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) ~[spring-data-commons-2.7.17.jar:2.7.17]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) ~[spring-data-commons-2.7.17.jar:2.7.17]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:160) ~[spring-data-commons-2.7.17.jar:2.7.17]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:139) ~[spring-data-commons-2.7.17.jar:2.7.17]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.30.jar:5.3.30]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:76) ~[spring-data-commons-2.7.17.jar:2.7.17]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.30.jar:5.3.30]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.30.jar:5.3.30]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.30.jar:5.3.30]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.30.jar:5.3.30]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.30.jar:5.3.30]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.30.jar:5.3.30]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.30.jar:5.3.30]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:145) ~[spring-data-jpa-2.7.17.jar:2.7.17]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.30.jar:5.3.30]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.30.jar:5.3.30]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.30.jar:5.3.30]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:241) ~[spring-aop-5.3.30.jar:5.3.30]
+	at jdk.proxy2/jdk.proxy2.$Proxy119.findByOrderId(Unknown Source) ~[na:na]
+	at com.shalaka.paymentservice.service.PaymentService.findPaymentHistoryByOrderID(PaymentService.java:29) ~[classes/:na]
+	at com.shalaka.paymentservice.controller.PaymentController.findPaymentHistoryByOrderID(PaymentController.java:32) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.30.jar:5.3.30]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529) ~[tomcat-embed-core-9.0.82.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.30.jar:5.3.30]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.82.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168) ~[tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) ~[tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928) ~[tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794) ~[tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.82.jar:9.0.82]
+	at java.base/java.lang.Thread.run(Thread.java:1589) ~[na:na]
+
+2023-11-02 11:53:21.421  INFO 12636 --- [http-nio-9092-exec-2] c.s.p.controller.PaymentController       : PaymentController doPayment request {"paymentId":0,"paymentStatus":null,"transactionId":null,"orderId":654,"amount":7902.0} 
+2023-11-02 11:53:21.422 DEBUG 12636 --- [http-nio-9092-exec-2] org.hibernate.SQL                        : call next value for hibernate_sequence
+2023-11-02 11:53:21.423 DEBUG 12636 --- [http-nio-9092-exec-2] org.hibernate.SQL                        : insert into payment_tbl (amount, order_id, payment_status, transaction_id, payment_id) values (?, ?, ?, ?, ?)
+2023-11-02 11:53:21.424  INFO 12636 --- [http-nio-9092-exec-2] c.s.p.controller.PaymentController       : PaymentController doPayment response {"paymentId":5,"paymentStatus":"SUCESS","transactionId":"10f5efda-df33-48cb-8cfe-d5a5fee29e5a","orderId":654,"amount":7902.0} 
+2023-11-02 11:53:28.893  INFO 12636 --- [http-nio-9092-exec-1] c.s.p.controller.PaymentController       : PaymentController findPaymentHistoryByOrderID request 654 
+2023-11-02 11:53:28.894 DEBUG 12636 --- [http-nio-9092-exec-1] org.hibernate.SQL                        : select payment0_.payment_id as payment_1_0_, payment0_.amount as amount2_0_, payment0_.order_id as order_id3_0_, payment0_.payment_status as payment_4_0_, payment0_.transaction_id as transact5_0_ from payment_tbl payment0_ where payment0_.order_id=?
+2023-11-02 11:53:28.896  INFO 12636 --- [http-nio-9092-exec-1] c.s.p.controller.PaymentController       : PaymentController findPaymentHistoryByOrderID response {"paymentId":5,"paymentStatus":"SUCESS","transactionId":"10f5efda-df33-48cb-8cfe-d5a5fee29e5a","orderId":654,"amount":7902.0} 
+2023-11-02 11:54:07.381  INFO 12636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 11:59:07.385  INFO 12636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 12:04:07.398  INFO 12636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 12:08:09.452  INFO 12636 --- [http-nio-9092-exec-5] c.s.p.controller.PaymentController       : PaymentController doPayment request {"paymentId":0,"paymentStatus":null,"transactionId":null,"orderId":666,"amount":7902.0} 
+2023-11-02 12:08:09.464 DEBUG 12636 --- [http-nio-9092-exec-5] org.hibernate.SQL                        : call next value for hibernate_sequence
+2023-11-02 12:08:09.473 DEBUG 12636 --- [http-nio-9092-exec-5] org.hibernate.SQL                        : insert into payment_tbl (amount, order_id, payment_status, transaction_id, payment_id) values (?, ?, ?, ?, ?)
+2023-11-02 12:08:09.477  INFO 12636 --- [http-nio-9092-exec-5] c.s.p.controller.PaymentController       : PaymentController doPayment response {"paymentId":6,"paymentStatus":"FAILURE","transactionId":"613804b5-c2d8-463a-81e9-594aa97d80c3","orderId":666,"amount":7902.0} 
+2023-11-02 12:08:17.054  INFO 12636 --- [http-nio-9092-exec-6] c.s.p.controller.PaymentController       : PaymentController findPaymentHistoryByOrderID request 666 
+2023-11-02 12:08:17.065 DEBUG 12636 --- [http-nio-9092-exec-6] org.hibernate.SQL                        : select payment0_.payment_id as payment_1_0_, payment0_.amount as amount2_0_, payment0_.order_id as order_id3_0_, payment0_.payment_status as payment_4_0_, payment0_.transaction_id as transact5_0_ from payment_tbl payment0_ where payment0_.order_id=?
+2023-11-02 12:08:17.070  INFO 12636 --- [http-nio-9092-exec-6] c.s.p.controller.PaymentController       : PaymentController findPaymentHistoryByOrderID response {"paymentId":6,"paymentStatus":"FAILURE","transactionId":"613804b5-c2d8-463a-81e9-594aa97d80c3","orderId":666,"amount":7902.0} 
+2023-11-02 12:09:07.413  INFO 12636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 12:14:07.542  INFO 12636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 12:19:07.551  INFO 12636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 12:24:07.563  INFO 12636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 12:29:07.567  INFO 12636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 12:34:07.575  INFO 12636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 12:39:07.581  INFO 12636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 12:44:07.583  INFO 12636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 12:49:07.595  INFO 12636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 12:54:07.611  INFO 12636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 12:59:07.622  INFO 12636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 13:04:07.625  INFO 12636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 13:09:07.632  INFO 12636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 13:09:33.097  INFO 12636 --- [http-nio-9092-exec-9] c.s.p.controller.PaymentController       : PaymentController doPayment request {"paymentId":0,"paymentStatus":null,"transactionId":null,"orderId":999,"amount":3333.0} 
+2023-11-02 13:09:33.298 DEBUG 12636 --- [http-nio-9092-exec-9] org.hibernate.SQL                        : call next value for hibernate_sequence
+2023-11-02 13:09:33.454 DEBUG 12636 --- [http-nio-9092-exec-9] org.hibernate.SQL                        : insert into payment_tbl (amount, order_id, payment_status, transaction_id, payment_id) values (?, ?, ?, ?, ?)
+2023-11-02 13:09:33.524  INFO 12636 --- [http-nio-9092-exec-9] c.s.p.controller.PaymentController       : PaymentController doPayment response {"paymentId":7,"paymentStatus":"SUCESS","transactionId":"dbef339e-b182-40ad-ab3c-7f102e12f7da","orderId":999,"amount":3333.0} 
+2023-11-02 13:14:07.668  INFO 12636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 13:19:07.672  INFO 12636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 13:24:07.676  INFO 12636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 13:29:07.690  INFO 12636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 13:31:53.707  INFO 12636 --- [http-nio-9092-exec-2] c.s.p.controller.PaymentController       : PaymentController findPaymentHistoryByOrderID request 666 
+2023-11-02 13:31:54.371 DEBUG 12636 --- [http-nio-9092-exec-2] org.hibernate.SQL                        : select payment0_.payment_id as payment_1_0_, payment0_.amount as amount2_0_, payment0_.order_id as order_id3_0_, payment0_.payment_status as payment_4_0_, payment0_.transaction_id as transact5_0_ from payment_tbl payment0_ where payment0_.order_id=?
+2023-11-02 13:31:54.728  INFO 12636 --- [http-nio-9092-exec-2] c.s.p.controller.PaymentController       : PaymentController findPaymentHistoryByOrderID response {"paymentId":6,"paymentStatus":"FAILURE","transactionId":"613804b5-c2d8-463a-81e9-594aa97d80c3","orderId":666,"amount":7902.0} 
+2023-11-02 13:34:07.693  INFO 12636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-02 13:35:09.734  INFO 12636 --- [http-nio-9092-exec-3] c.s.p.controller.PaymentController       : PaymentController findPaymentHistoryByOrderID request 666 
+2023-11-02 13:35:09.735 DEBUG 12636 --- [http-nio-9092-exec-3] org.hibernate.SQL                        : select payment0_.payment_id as payment_1_0_, payment0_.amount as amount2_0_, payment0_.order_id as order_id3_0_, payment0_.payment_status as payment_4_0_, payment0_.transaction_id as transact5_0_ from payment_tbl payment0_ where payment0_.order_id=?
+2023-11-02 13:35:09.774  INFO 12636 --- [http-nio-9092-exec-3] c.s.p.controller.PaymentController       : PaymentController findPaymentHistoryByOrderID response {"paymentId":6,"paymentStatus":"FAILURE","transactionId":"613804b5-c2d8-463a-81e9-594aa97d80c3","orderId":666,"amount":7902.0} 
